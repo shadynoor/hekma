@@ -73,8 +73,8 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
               <img
                 src={
                   isScrolled || !isHomePage
-                    ? `/hekma/src/assets/LOGO EDIT-04.png`
-                    : `/hekma/src/assets/LOGO EDIT-03.png`
+                    ? `/src/assets/LOGO EDIT-04.png`
+                    : `/src/assets/LOGO EDIT-03.png`
                 }
                 alt="H-CARE"
                 className={`h-12 transition-all duration-300 ${
