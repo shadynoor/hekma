@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const [videoId, setVideoId] = useState(
-    language == "ar" ? "1095234215" : "1095235056"
+    language == "ar" ? "1097276425" : "1097277008"
   ); // Placeholder - replace with actual Vimeo ID
 
   const content = {

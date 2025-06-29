@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Phone, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
+import logo4 from "../assets/logo4.png";
+import logo3 from "../assets/logo3.png";
+
 interface HeaderProps {
   language: string;
 }
@@ -20,9 +23,9 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (location.pathname !== "/") {
+    if (location.pathname !== "/hekma") {
       // If not on home page, navigate to home first
-      window.location.href = `/#${sectionId}`;
+      window.location.href = `/hekma#${sectionId}`;
       return;
     }
 
@@ -38,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
     setIsMenuOpen(false);
   };
 
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/hekma";
 
   const navItems =
     language === "ar"
@@ -71,11 +74,7 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
           <div className="flex-shrink-0">
             <Link to="/" onClick={() => scrollToSection("home")}>
               <img
-                src={
-                  isScrolled || !isHomePage
-                    ? `/src/assets/LOGO EDIT-04.png`
-                    : `/src/assets/LOGO EDIT-03.png`
-                }
+                src={isScrolled || !isHomePage ? logo4 : logo3}
                 alt="H-CARE"
                 className={`h-12 transition-all duration-300 ${
                   isScrolled || !isHomePage ? "h-20" : "h-24"
@@ -107,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
               }`}
             >
               <Phone size={16} />
-              <span>+966 11 123 4567</span>
+              <span dir="ltr">+966 11 123 4567</span>
             </div>
             <button
               onClick={() => scrollToSection("contact")}

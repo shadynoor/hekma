@@ -10,6 +10,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import logo2 from "../assets/logo2.png";
 
 interface FooterProps {
   language: string;
@@ -50,11 +51,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         <div className="grid lg:grid-cols-3 gap-8 items-center">
           {/* Brand & Description */}
           <div className="lg:col-span-1">
-            <img
-              src="/src/assets/LOGO EDIT-02.png"
-              alt="H-CARE"
-              className="h-16 mb-4"
-            />
+            <img src={logo2} alt="H-CARE" className="h-16 mb-4" />
             <p className="text-gray-400 leading-relaxed mb-6">
               {t.description}
             </p>
@@ -63,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <div className="space-y-2">
               <div className="flex items-center gap-inline-3 text-sm text-gray-400">
                 <Phone size={16} className="text-hcare-primary" />
-                <span>+966 11 123 4567</span>
+                <span dir="ltr">+966 11 123 4567</span>
               </div>
               <div className="flex items-center gap-inline-3 text-sm text-gray-400">
                 <Mail size={16} className="text-hcare-primary" />
