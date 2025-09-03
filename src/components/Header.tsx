@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import logo4 from "../assets/logo4.png";
 import logo3 from "../assets/logo3.png";
+import logo4 from "../assets/logo4.png";
 
 interface HeaderProps {
   language: string;
@@ -25,8 +25,7 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/hekma") {
       // If not on home page, navigate to home first
-      window.location.href = `/hekma#${sectionId}`;
-      return;
+      window.location.href = `/hekma`;
     }
 
     const element = document.getElementById(sectionId);
@@ -47,16 +46,16 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
     language === "ar"
       ? [
           { name: "الرئيسية", href: isHomePage ? "home" : "home" },
-          { name: "من نحن", href: "about" },
+          // { name: "من نحن", href: "about" },
           { name: "خدماتنا", href: "services" },
-          { name: "أعمالنا", href: "portfolio" },
+          // { name: "أعمالنا", href: "portfolio" },
           { name: "اتصل بنا", href: "contact" },
         ]
       : [
           { name: "Home", href: "home" },
-          { name: "About Us", href: "about" },
+          // { name: "About Us", href: "about" },
           { name: "Our Services", href: "services" },
-          { name: "Our Work", href: "portfolio" },
+          // { name: "Our Work", href: "portfolio" },
           { name: "Contact Us", href: "contact" },
         ];
 
@@ -100,14 +99,15 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center gap-inline-6">
-            <div
+            <a
+              href="tel:+966570062075"
               className={`flex items-center gap-inline-2 text-sm ${
                 isScrolled || !isHomePage ? "text-gray-600" : "text-white/80"
               }`}
             >
               <Phone size={16} />
-              <span dir="ltr">+966 11 123 4567</span>
-            </div>
+              <span dir="ltr">+966 57 006 2075</span>
+            </a>
             <button
               onClick={() => scrollToSection("contact")}
               className="bg-hcare-primary hover:bg-hcare-secondary text-white padding-inline-6 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105"

@@ -1,15 +1,15 @@
-import React from "react";
 import {
   Facebook,
-  Twitter,
+  Heart,
   Instagram,
   Linkedin,
-  Youtube,
-  Heart,
-  Phone,
   Mail,
   MapPin,
+  Phone,
+  Twitter,
+  Youtube,
 } from "lucide-react";
+import React from "react";
 import logo2 from "../assets/logo2.png";
 
 interface FooterProps {
@@ -31,15 +31,15 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         "مؤسسة حكمة الخبرة الطبية - نقدم أفضل الخدمات الطبية والرعاية الصحية المتخصصة بأحدث التقنيات والمعايير العالمية.",
       copyright: "© 2024 H-CARE مؤسسة حكمة الخبرة الطبية. جميع الحقوق محفوظة.",
       madeWith: "صُنع بـ",
-      team: "من فريق H-CARE",
+      team: "ShadyNoor",
     },
     en: {
       description:
-        "H-CARE Hikmat Al-Khibra Medical Foundation - We provide the best medical services and specialized healthcare with the latest technologies and international standards.",
+        "H-CARE Medical Est. - We provide the best medical services and specialized healthcare with the latest technologies and international standards.",
       copyright:
         "© 2024 H-CARE Hikmat Al-Khibra Medical Foundation. All rights reserved.",
       madeWith: "Made with",
-      team: "by H-CARE Team",
+      team: "by ShadyNoor",
     },
   };
 
@@ -60,11 +60,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <div className="space-y-2">
               <div className="flex items-center gap-inline-3 text-sm text-gray-400">
                 <Phone size={16} className="text-hcare-primary" />
-                <span dir="ltr">+966 11 123 4567</span>
+                <span dir="ltr">+966 57 006 2075</span>
               </div>
               <div className="flex items-center gap-inline-3 text-sm text-gray-400">
                 <Mail size={16} className="text-hcare-primary" />
-                <span>info@hcare.sa</span>
+                <span>sales@h-care.sa</span>
               </div>
               <div className="flex items-center gap-inline-3 text-sm text-gray-400">
                 <MapPin size={16} className="text-hcare-primary" />

@@ -1,15 +1,14 @@
+import {
+  ArrowLeft,
+  ArrowRight,
+  Award,
+  Heart,
+  Microscope,
+  Settings,
+  TestTube,
+} from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Users,
-  Settings,
-  Award,
-  TestTube,
-  Microscope,
-  Heart,
-  ArrowRight,
-  ArrowLeft,
-} from "lucide-react";
 
 interface ServicesProps {
   language: string;
@@ -25,10 +24,72 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
       findMore: "اعرف المزيد",
       services: [
         {
-          id: "medical-consulting",
-          title: "توفير خدمات استشارية متخصصة في مجال المعدات الطبية",
+          id: "Laboratory-Consumables",
+          title: "المستلزمات المخبرية",
           description:
             "نقدم استشارات متخصصة لاختيار وتطبيق أفضل المعدات الطبية المناسبة لاحتياجاتكم.",
+          sub1: "الأواني الزجاجية الأساسية",
+          feats1: [
+            "أنابيب اختبار",
+            "دورق إرلنماير",
+            "كؤوس زجاجية (Beakers)",
+            "أسطوانة مدرجة",
+            "دورق حجمي",
+          ],
+          sub2: "الأدوات البلاستيكية",
+          feats2: [
+            "أنابيب تفاعل PCR",
+            "أنبوب إبندورف",
+            "ألواح PCR",
+            "شرائط أنابيب / أغطية",
+            "أغطية لاصقة / أغطية بصرية",
+            "رؤوس ماصات بفلتر",
+            "طبق بتري",
+            "حلقة تلقيح",
+            "رؤوس ماصات",
+            "دورق زراعة الخلايا",
+            "ألواح ELISA",
+          ],
+          features: [
+            "تقييم الاحتياجات",
+            "اختيار المعدات",
+            "التخطيط والتنفيذ",
+            "المتابعة والدعم",
+          ],
+        },
+
+        {
+          id: "Laboratory-Equipment",
+          title: "الأجهزة المخبرية",
+          description: "",
+          sub1: "أجهزة القياس والتحليل",
+          feats1: [
+            "ميزان إلكتروني",
+            "جهاز قياس الأس الهيدروجيني (pH Meter)",
+            "مطياف ضوئي (Spectrophotometer)",
+            "جهاز طرد مركزي (Centrifuge)",
+          ],
+          sub2: "أجهزة التسخين والتعقيم",
+          feats2: [
+            "حمام مائي",
+            "صفيحة تسخين مع محرك مغناطيسي",
+            "الأوتوكلاف (Autoclave)",
+          ],
+
+          sub3: "أجهزة التبريد والتخزين",
+          feats3: [
+            "ثلاجة مخبرية",
+            "مجمد مخبري (-20/-80 درجة مئوية)",
+            "خزانة السلامة البيولوجية",
+          ],
+          sub4: "أجهزة التحليل الحيوي المتقدمة",
+          feats4: [
+            "جهاز PCR",
+            "محلل الدم (Hematology Analyzer)",
+            "محلل الكيمياء الحيوية",
+            "مجهر ضوئي",
+            "ماصة دقيقة (Pipette)",
+          ],
           features: [
             "تقييم الاحتياجات",
             "اختيار المعدات",
@@ -37,80 +98,71 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
           ],
         },
         {
-          id: "equipment-maintenance",
-          title: "صيانة وتركيب المعدات الطبية",
-          description:
-            "خدمات صيانة وتركيب شاملة للمعدات الطبية لضمان الأداء الأمثل والسلامة.",
-          features: [
-            "صيانة دورية",
-            "إصلاح طارئ",
-            "تركيب احترافي",
-            "ضمان الجودة",
+          id: "Microbiology-Dehydrated-Media",
+          title: "وسائط مجففة لعلم الأحياء الدقيقة",
+          description: "",
+          sub1: "وسائط للأغراض العامة",
+          feats1: [
+            "آجار/مرق المغذيات",
+            "آجار صويا التربتيك (TSA)",
+            "تسريب دماغ قلب (BHI)",
           ],
-        },
-        {
-          id: "technical-support",
-          title: "تقديم خدمات الدعم الفني والتدريب للمختبرات",
-          description:
-            "دعم فني متخصص وبرامج تدريبية شاملة لفرق المختبرات الطبية.",
+          sub2: "وسائط مُثرية",
+          feats2: ["آجار الدم الأساسي", "آجار الشوكولاتة الأساسي"],
+
+          sub3: "وسائط انتقائية",
+          feats3: ["آجار ماكونكي", "آجار مانيتول الملحي (MSA)", "آجار XLD"],
+
+          sub4: "وسائط تفريقية",
+          feats4: ["آجار EMB (إيوزين ميثيلين أزرق)", "آجار CLED"],
           features: [
-            "دعم فني 24/7",
-            "برامج تدريبية",
-            "استشارات تقنية",
-            "تطوير المهارات",
+            "تقييم الاحتياجات",
+            "اختيار المعدات",
+            "التخطيط والتنفيذ",
+            "المتابعة والدعم",
           ],
-        },
-        {
-          id: "laboratory-supplies",
-          title: "مستلزمات مختبرات طبية استهلاكية",
-          description:
-            "توفير جميع المستلزمات الاستهلاكية عالية الجودة للمختبرات الطبية.",
-          features: [
-            "مواد استهلاكية",
-            "أدوات تشخيص",
-            "مواد كيميائية",
-            "معايير الجودة",
-          ],
-        },
-        {
-          id: "advanced-equipment",
-          title: "أجهزة ومعدات مختبرات طبية متطورة",
-          description:
-            "أحدث الأجهزة والمعدات الطبية المتطورة للمختبرات والمراكز الطبية.",
-          features: [
-            "تقنيات حديثة",
-            "دقة عالية",
-            "سهولة الاستخدام",
-            "ضمان شامل",
-          ],
-        },
-        {
-          id: "veterinary-solutions",
-          title: "حلول وتقنيات بيطرية متخصصة",
-          description:
-            "حلول طبية متخصصة للطب البيطري مع أحدث التقنيات والمعدات.",
-          features: [
-            "معدات بيطرية",
-            "أدوية متخصصة",
-            "أدوات جراحية",
-            "نظم تشخيص",
-          ],
+
+          sub5: "وسائط للإثراء",
+          feats5: ["مرق سيلينيت إف", "مرق التيتراثيونات"],
         },
       ],
     },
+
     en: {
       subtitle: "Services and Products",
-      title: "What services and products does Hikmat Al-Khibra offer you?",
+      title: "What services and products does H-Care?",
       description:
         "We provide a comprehensive range of specialized medical services and products to meet all your healthcare needs.",
       findMore: "Learn More",
       services: [
         {
-          id: "medical-consulting",
+          id: "Laboratory-Consumables",
           title:
             "Providing specialized consulting services in the field of medical equipment",
           description:
             "We provide specialized consultations for selecting and implementing the best medical equipment suitable for your needs.",
+          sub1: "Basic Glassware",
+          feats1: [
+            "Test Tubes",
+            "Erlenmeyer Flask",
+            "Beakers",
+            "Graduated Cylinder",
+            "Volumetric flask",
+          ],
+          sub2: "Plastic ware",
+          feats2: [
+            "PCR Tubes",
+            "Eppendorf Tube",
+            "PCR Plates",
+            "Tube Strips / Cap Strips",
+            "Adhesive Seals / Optical Caps",
+            "Filtered Pipette Tips",
+            "Petri dish",
+            "Inoculation loop",
+            "Pipette tips",
+            "Cell culture flask",
+            "ELISA plates",
+          ],
           features: [
             "Needs Assessment",
             "Equipment Selection",
@@ -118,73 +170,81 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
             "Follow-up & Support",
           ],
         },
+
         {
-          id: "equipment-maintenance",
-          title: "Maintenance and installation of medical equipment",
-          description:
-            "Comprehensive maintenance and installation services for medical equipment to ensure optimal performance and safety.",
+          id: "Laboratory-Equipment",
+          title: "Laboratory Equipment",
+          description: "",
+          sub1: "Measurement and Analysis Instruments",
+          feats1: [
+            "Electronic Balance",
+            "pH Meter",
+            "Spectrophotometer",
+            "Centrifuge",
+          ],
+          sub2: "Heating and Sterilization Equipment",
+          feats2: [
+            "Water Bath",
+            "Hot Plate with Magnetic Stirrer",
+            "Autoclave",
+          ],
+
+          sub3: "Refrigeration and Storage Equipment",
+          feats3: [
+            "Laboratory Refrigerator",
+            "Laboratory Freezer (-20/-80°C)",
+            "Biological Safety Cabinet",
+          ],
+          sub4: "Advanced Bioanalytical Equipment",
+          feats4: [
+            "PCR Machine",
+            "Hematology Analyzer",
+            "Biochemistry Analyzer",
+            "Light Microscope",
+            "Pipette",
+          ],
           features: [
-            "Periodic Maintenance",
-            "Emergency Repair",
-            "Professional Installation",
-            "Quality Assurance",
+            "تقييم الاحتياجات",
+            "اختيار المعدات",
+            "التخطيط والتنفيذ",
+            "المتابعة والدعم",
           ],
         },
+
         {
-          id: "technical-support",
-          title:
-            "Providing technical support and training services for laboratories",
-          description:
-            "Specialized technical support and comprehensive training programs for medical laboratory teams.",
-          features: [
-            "24/7 Technical Support",
-            "Training Programs",
-            "Technical Consultations",
-            "Skill Development",
+          id: "Microbiology-Dehydrated-Media",
+          title: "Microbiology Dehydrated Media",
+          description: "",
+          sub1: "General Purpose Media",
+          feats1: [
+            "Nutrient Agar/Broth",
+            "Tryptic Soy Agar (TSA)",
+            "Brain Heart Infusion (BHI)",
           ],
-        },
-        {
-          id: "laboratory-supplies",
-          title: "Medical laboratory consumable supplies",
-          description:
-            "Providing all high-quality consumable supplies for medical laboratories.",
+          sub2: "Enriched Media",
+          feats2: ["Blood Agar Base", "Chocolate Agar Base"],
+
+          sub3: "Selective Media",
+          feats3: ["MacConkey Agar", "Mannitol Salt Agar (MSA)", "XLD Agar"],
+
+          sub4: "Differential Media",
+          feats4: ["EMB Agar (Eosin Methylene Blue)", "CLED Agar"],
           features: [
-            "Consumable Materials",
-            "Diagnostic Tools",
-            "Chemical Materials",
-            "Quality Standards",
+            "تقييم الاحتياجات",
+            "اختيار المعدات",
+            "التخطيط والتنفيذ",
+            "المتابعة والدعم",
           ],
-        },
-        {
-          id: "advanced-equipment",
-          title: "Advanced medical laboratory equipment and devices",
-          description:
-            "Latest advanced medical equipment and devices for laboratories and medical centers.",
-          features: [
-            "Modern Technologies",
-            "High Accuracy",
-            "Ease of Use",
-            "Comprehensive Warranty",
-          ],
-        },
-        {
-          id: "veterinary-solutions",
-          title: "Specialized veterinary solutions and techniques",
-          description:
-            "Specialized medical solutions for veterinary medicine with the latest technologies and equipment.",
-          features: [
-            "Veterinary Equipment",
-            "Specialized Medicines",
-            "Surgical Instruments",
-            "Diagnostic Systems",
-          ],
+
+          sub5: "Enrichment Media",
+          feats5: ["Selenite F Brot", "Tetrathionate Broth"],
         },
       ],
     },
   };
 
   const t = content[language as keyof typeof content];
-  const icons = [Users, Settings, Award, TestTube, Microscope, Heart];
+  const icons = [Microscope, Settings, Award, TestTube, Microscope, Heart];
 
   return (
     <section id="services" className="py-20 bg-gray-50">
@@ -207,34 +267,93 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
             return (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-hcare-primary to-hcare-secondary rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   <IconComponent size={28} className="text-white" />
                 </div>
-
                 <h4 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
                   {service.title}
                 </h4>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
+                <strong className="text-gray-600 mb-6 leading-relaxed">
+                  {service.sub1}
+                </strong>
+                <ul className="space-y-2 mb-6 mt-2">
+                  {service.feats1!.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
                       className="flex items-center text-sm text-gray-600"
                     >
-                      <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full ml-3"></div>
+                      <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full me-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <strong className="text-gray-600 mb-6 leading-relaxed">
+                  {service.sub2}
+                </strong>
+                <ul className="space-y-2 mb-6 mt-2">
+                  {service.feats2!.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center text-sm text-gray-600"
+                    >
+                      <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full me-3"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
+                <strong className="text-gray-600 mb-6 leading-relaxed">
+                  {service.sub3 && service.sub3}
+                </strong>
+                <ul className="space-y-2 mb-6 mt-2">
+                  {service.feats3 &&
+                    service.feats3.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full me-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                </ul>
+
+                <strong className="text-gray-600 mb-6 leading-relaxed">
+                  {service.sub4 && service.sub4}
+                </strong>
+                <ul className="space-y-2 mb-6 mt-2">
+                  {service.feats4 &&
+                    service.feats4.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full me-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                </ul>
+                <strong className="text-gray-600 mb-6 leading-relaxed">
+                  {service.sub5 && service.sub5}
+                </strong>
+                <ul className="space-y-2 mb-6 mt-2">
+                  {service.feats5 &&
+                    service.feats5.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm text-gray-600"
+                      >
+                        <div className="w-1.5 h-1.5 bg-hcare-primary rounded-full me-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                </ul>
+
                 <Link
                   to={`/hekma/category/${service.id}`}
-                  className="inline-flex items-center gap-2 text-hcare-primary hover:text-hcare-secondary font-semibold transition-colors duration-200 group/link"
+                  className="inline-flex absolute bottom-4 items-center gap-2 text-hcare-primary hover:text-hcare-secondary font-semibold transition-colors duration-200 group/link"
                 >
                   {t.findMore}
                   {language === "ar" ? (

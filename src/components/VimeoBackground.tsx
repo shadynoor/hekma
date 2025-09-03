@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Play, Loader } from "lucide-react";
+import { Loader } from "lucide-react";
+import React, { useEffect, useState } from "react";
 
 interface VimeoBackgroundProps {
   videoId: string;
-  children: React.ReactNode;
 }
 
-const VimeoBackground: React.FC<VimeoBackgroundProps> = ({
-  videoId,
-  children,
-}) => {
+const VimeoBackground: React.FC<VimeoBackgroundProps> = ({ videoId }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -35,7 +31,7 @@ const VimeoBackground: React.FC<VimeoBackgroundProps> = ({
       {/* Loading State */}
       {isLoading && (
         <div className="absolute inset-0 bg-hcare-primary flex items-center justify-center z-20">
-          <div className="text-center text-white">
+          <div className="text-center text-hcare-primary">
             <Loader size={48} className="animate-spin mx-auto mb-4" />
             <p className="text-lg font-medium">Loading...</p>
           </div>
@@ -61,10 +57,10 @@ const VimeoBackground: React.FC<VimeoBackgroundProps> = ({
       )}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-10"></div>
+      {/* <div className="absolute inset-0 bg-black/30 z-10"></div> */}
 
       {/* Content */}
-      <div className="relative z-20 h-full">{children}</div>
+      {/* <div className="relative z-20 h-full">{children}</div> */}
     </div>
   );
 };

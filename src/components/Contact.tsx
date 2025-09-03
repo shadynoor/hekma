@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Clock, Users } from 'lucide-react';
+import { CheckCircle, Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import React, { useState } from "react";
 
 interface ContactProps {
   language: string;
@@ -7,115 +7,129 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ language }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    await fetch("https://formbold.com/s/oylNK", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const content = {
     ar: {
-      subtitle: 'تواصل معنا',
-      title: 'ابدأ رحلتك الصحية معنا',
-      description: 'مستعدون لتحقيق رؤيتك الصحية؟ نحن نحب أن نسمع عن احتياجاتك ونناقش كيف يمكننا مساعدتك في تحقيق أهدافك الصحية.',
-      contactInfo: 'معلومات التواصل',
-      workingHours: 'ساعات العمل',
-      whyChooseUs: 'لماذا تختارنا؟',
-      sendMessage: 'أرسل لنا رسالة',
-      messageSent: 'تم إرسال الرسالة!',
-      thankYou: 'شكراً لتواصلك معنا. سنعود إليك قريباً.',
+      subtitle: "تواصل معنا",
+      title: "ابدأ رحلتك الصحية معنا",
+      description:
+        "مستعدون لتحقيق رؤيتك الصحية؟ نحن نحب أن نسمع عن احتياجاتك ونناقش كيف يمكننا مساعدتك في تحقيق أهدافك الصحية.",
+      contactInfo: "معلومات التواصل",
+      workingHours: "ساعات العمل",
+      whyChooseUs: "لماذا تختارنا؟",
+      sendMessage: "أرسل لنا رسالة",
+      messageSent: "تم إرسال الرسالة!",
+      thankYou: "شكراً لتواصلك معنا. سنعود إليك قريباً.",
       contactDetails: [
-        { title: 'اتصل بنا', details: '+966 11 123 4567', link: 'tel:+966111234567' },
-        { title: 'البريد الإلكتروني', details: 'info@hcare.sa', link: 'mailto:info@hcare.sa' },
-        { title: 'موقعنا', details: 'الرياض، المملكة العربية السعودية', link: '#' }
+        {
+          title: "اتصل بنا",
+          details: "+966 57 006 2075",
+          link: "tel:+966570062075",
+        },
+        {
+          title: "البريد الإلكتروني",
+          details: "sales@h-care.sa",
+          link: "mailto:sales@h-care.sa",
+        },
+        {
+          title: "موقعنا",
+          details: "الرياض، المملكة العربية السعودية",
+          link: "#",
+        },
       ],
-      schedule: [
-        { day: 'السبت - الخميس', hours: '8:00 ص - 10:00 م' },
-        { day: 'الجمعة', hours: '2:00 م - 10:00 م' },
-        { day: 'الطوارئ', hours: '24 ساعة' }
-      ],
-      benefits: [
-        'أكثر من 15 سنة من الخبرة الطبية',
-        'أكثر من 10,000 مريض سعيد',
-        'دعم ومتابعة على مدار الساعة',
-        'ضمان الجودة والرضا 100%'
-      ],
+      schedule: [{ day: "الاحد - الخميس", hours: "8:00 ص - 4:00 م" }],
+      benefits: ["دعم ومتابعة على مدار الساعة", "ضمان الجودة والرضا 100%"],
       form: {
-        fullName: 'الاسم الكامل',
-        phone: 'رقم الهاتف',
-        email: 'البريد الإلكتروني',
-        subject: 'الموضوع',
-        message: 'الرسالة',
-        send: 'إرسال الرسالة',
+        fullName: "الاسم الكامل",
+        phone: "رقم الهاتف",
+        email: "البريد الإلكتروني",
+        subject: "الموضوع",
+        message: "الرسالة",
+        send: "إرسال الرسالة",
         placeholders: {
-          name: 'أحمد محمد',
-          phone: '+966 50 123 4567',
-          email: 'ahmed@example.com',
-          subject: 'استشارة طبية',
-          message: 'أخبرنا عن احتياجاتك الطبية...'
-        }
-      }
+          name: "أحمد محمد",
+          phone: "+966 50 123 4567",
+          email: "ahmed@example.com",
+          subject: "استشارة طبية",
+          message: "أخبرنا عن احتياجاتك الطبية...",
+        },
+      },
     },
     en: {
-      subtitle: 'Contact Us',
-      title: 'Start Your Health Journey With Us',
-      description: 'Ready to achieve your health vision? We love to hear about your needs and discuss how we can help you achieve your health goals.',
-      contactInfo: 'Contact Information',
-      workingHours: 'Working Hours',
-      whyChooseUs: 'Why Choose Us?',
-      sendMessage: 'Send Us a Message',
-      messageSent: 'Message Sent!',
-      thankYou: 'Thank you for contacting us. We will get back to you soon.',
+      subtitle: "Contact Us",
+      title: "Start Your Health Journey With Us",
+      description:
+        "Ready to achieve your health vision? We love to hear about your needs and discuss how we can help you achieve your health goals.",
+      contactInfo: "Contact Information",
+      workingHours: "Working Hours",
+      whyChooseUs: "Why Choose Us?",
+      sendMessage: "Send Us a Message",
+      messageSent: "Message Sent!",
+      thankYou: "Thank you for contacting us. We will get back to you soon.",
       contactDetails: [
-        { title: 'Call Us', details: '+966 11 123 4567', link: 'tel:+966111234567' },
-        { title: 'Email', details: 'info@hcare.sa', link: 'mailto:info@hcare.sa' },
-        { title: 'Location', details: 'Riyadh, Saudi Arabia', link: '#' }
+        {
+          title: "Call Us",
+          details: "+966 57 006 2075",
+          link: "tel:+966570062075",
+        },
+        {
+          title: "Email",
+          details: "sales@h-care.sa",
+          link: "mailto:sales@h-care.sa",
+        },
+        { title: "Location", details: "Riyadh, Saudi Arabia", link: "#" },
       ],
-      schedule: [
-        { day: 'Saturday - Thursday', hours: '8:00 AM - 10:00 PM' },
-        { day: 'Friday', hours: '2:00 PM - 10:00 PM' },
-        { day: 'Emergency', hours: '24 Hours' }
-      ],
+      schedule: [{ day: "Sunday - Thursday", hours: "8:00 AM - 4:00 PM" }],
       benefits: [
-        'More than 15 years of medical experience',
-        'More than 10,000 happy patients',
-        '24/7 support and follow-up',
-        '100% quality and satisfaction guarantee'
+        "24/7 support and follow-up",
+        "100% quality and satisfaction guarantee",
       ],
       form: {
-        fullName: 'Full Name',
-        phone: 'Phone Number',
-        email: 'Email',
-        subject: 'Subject',
-        message: 'Message',
-        send: 'Send Message',
+        fullName: "Full Name",
+        phone: "Phone Number",
+        email: "Email",
+        subject: "Subject",
+        message: "Message",
+        send: "Send Message",
         placeholders: {
-          name: 'Ahmed Mohammed',
-          phone: '+966 50 123 4567',
-          email: 'ahmed@example.com',
-          subject: 'Medical Consultation',
-          message: 'Tell us about your medical needs...'
-        }
-      }
-    }
+          name: "Ahmed Mohammed",
+          phone: "+966 50 123 4567",
+          email: "ahmed@example.com",
+          subject: "Medical Consultation",
+          message: "Tell us about your medical needs...",
+        },
+      },
+    },
   };
 
   const t = content[language as keyof typeof content];
@@ -124,7 +138,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl margin-inline-auto padding-inline-4 sm:padding-inline-6 lg:padding-inline-8">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-hcare-primary uppercase tracking-wider mb-4">{t.subtitle}</h2>
+          <h2 className="text-sm font-semibold text-hcare-primary uppercase tracking-wider mb-4">
+            {t.subtitle}
+          </h2>
           <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {t.title}
           </h3>
@@ -137,7 +153,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-6">{t.contactInfo}</h4>
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">
+                {t.contactInfo}
+              </h4>
               <div className="space-y-6">
                 {t.contactDetails.map((info, index) => {
                   const icons = [Phone, Mail, MapPin];
@@ -152,7 +170,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                         <IconComponent size={20} className="text-white" />
                       </div>
                       <div className="text-align-start">
-                        <div className="font-semibold text-gray-900">{info.title}</div>
+                        <div className="font-semibold text-gray-900">
+                          {info.title}
+                        </div>
                         <div className="text-gray-600">{info.details}</div>
                       </div>
                     </a>
@@ -169,9 +189,16 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               </h5>
               <div className="space-y-3">
                 {t.schedule.map((schedule, index) => (
-                  <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                    <span className="font-medium text-gray-900">{schedule.day}</span>
-                    <span className="text-hcare-primary font-semibold">{schedule.hours}</span>
+                  <div
+                    key={index}
+                    className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0"
+                  >
+                    <span className="font-medium text-gray-900">
+                      {schedule.day}
+                    </span>
+                    <span className="text-hcare-primary font-semibold">
+                      {schedule.hours}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -192,19 +219,29 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
           {/* Contact Form */}
           <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h4 className="text-2xl font-bold text-gray-900 mb-6">{t.sendMessage}</h4>
-            
+            <h4 className="text-2xl font-bold text-gray-900 mb-6">
+              {t.sendMessage}
+            </h4>
+
             {isSubmitted ? (
               <div className="text-center py-12">
-                <CheckCircle size={64} className="text-hcare-primary margin-inline-auto mb-4" />
-                <h5 className="text-xl font-semibold text-gray-900 mb-2">{t.messageSent}</h5>
+                <CheckCircle
+                  size={64}
+                  className="text-hcare-primary margin-inline-auto mb-4"
+                />
+                <h5 className="text-xl font-semibold text-gray-900 mb-2">
+                  {t.messageSent}
+                </h5>
                 <p className="text-gray-600">{t.thankYou}</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 text-align-start">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2 text-align-start"
+                    >
                       {t.form.fullName}
                     </label>
                     <input
@@ -219,7 +256,10 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2 text-align-start">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2 text-align-start"
+                    >
                       {t.form.phone}
                     </label>
                     <input
@@ -236,7 +276,10 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 text-align-start">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2 text-align-start"
+                  >
                     {t.form.email}
                   </label>
                   <input
@@ -252,7 +295,10 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2 text-align-start">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-2 text-align-start"
+                  >
                     {t.form.subject}
                   </label>
                   <input
@@ -268,7 +314,10 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 text-align-start">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2 text-align-start"
+                  >
                     {t.form.message}
                   </label>
                   <textarea

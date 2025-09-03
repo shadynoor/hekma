@@ -1,331 +1,708 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, Phone, Calendar, Clock, CheckCircle, Star, Users, Award } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Phone } from "lucide-react";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import img1 from "../assets/Laboratory-Consumables/1.jpg";
+import img2 from "../assets/Laboratory-Consumables/2.jpg";
+import img3 from "../assets/Laboratory-Consumables/3.jpg";
+import img4 from "../assets/Laboratory-Consumables/4.jpg";
+import img5 from "../assets/Laboratory-Consumables/5.jpg";
+import img6 from "../assets/Laboratory-Consumables/plastic/1.jpg";
+import img15 from "../assets/Laboratory-Consumables/plastic/10.jpg";
+import img16 from "../assets/Laboratory-Consumables/plastic/11.jpg";
+import img7 from "../assets/Laboratory-Consumables/plastic/2.jpg";
+import img8 from "../assets/Laboratory-Consumables/plastic/3.jpg";
+import img9 from "../assets/Laboratory-Consumables/plastic/4.jpg";
+import img10 from "../assets/Laboratory-Consumables/plastic/5.jpg";
+import img11 from "../assets/Laboratory-Consumables/plastic/6.jpg";
+import img12 from "../assets/Laboratory-Consumables/plastic/7.jpg";
+import img13 from "../assets/Laboratory-Consumables/plastic/8.jpg";
+import img14 from "../assets/Laboratory-Consumables/plastic/9.jpg";
+
+import image1 from "../assets/Laboratory Equipment/1.jpg";
+import image10 from "../assets/Laboratory Equipment/10.jpg";
+import image11 from "../assets/Laboratory Equipment/11.jpg";
+import image12 from "../assets/Laboratory Equipment/12.jpg";
+import image13 from "../assets/Laboratory Equipment/13.jpg";
+import image14 from "../assets/Laboratory Equipment/14.jpg";
+import image15 from "../assets/Laboratory Equipment/15.jpg";
+import image2 from "../assets/Laboratory Equipment/2.jpg";
+import image3 from "../assets/Laboratory Equipment/3.jpg";
+import image4 from "../assets/Laboratory Equipment/4.jpg";
+import image5 from "../assets/Laboratory Equipment/5.jpg";
+import image6 from "../assets/Laboratory Equipment/6.jpg";
+import image7 from "../assets/Laboratory Equipment/7.jpg";
+import image8 from "../assets/Laboratory Equipment/8.jpg";
+import image9 from "../assets/Laboratory Equipment/9.jpg";
+
+import image from "../assets/Microbiology-Dehydrated/dehdrated culture media.jpg";
 
 interface CategoryDetailProps {
   language: string;
 }
 
+window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+});
+
 const CategoryDetail: React.FC<CategoryDetailProps> = ({ language }) => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
   const { categoryId } = useParams();
 
   const categoryData = {
     ar: {
-      'medical-consulting': {
-        title: 'خدمات استشارية متخصصة في مجال المعدات الطبية',
-        subtitle: 'استشارات طبية متخصصة وحلول مبتكرة',
-        description: 'نقدم خدمات استشارية متخصصة في مجال المعدات الطبية، حيث نساعد المؤسسات الصحية في اختيار وتطبيق أفضل الحلول التقنية المناسبة لاحتياجاتها الخاصة.',
-        image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg',
+      "Laboratory-Consumables": {
+        title: "المستلزمات المخبرية",
+        image: "",
+        sec1Title: "الأواني الزجاجية الأساسية",
         services: [
-          'تقييم شامل للاحتياجات الطبية',
-          'اختيار المعدات المناسبة',
-          'دراسات الجدوى الاقتصادية',
-          'التخطيط الاستراتيجي للتطوير',
-          'إدارة المشاريع الطبية',
-          'ضمان الجودة والمعايير'
+          {
+            title: "أنابيب اختبار",
+            desc: "تُستخدم أنابيب الاختبار لحفظ أو تسخين أو خلط كميات صغيرة من السوائل.",
+            img: img1,
+          },
+          {
+            title: "دورق إرلنماير",
+            desc: "دورق مخروطي الشكل يُستخدم للخلط والتسخين والتخزين، ويتميز برقبة ضيقة تمنع الانسكاب.",
+            img: img2,
+          },
+          {
+            title: "الكؤوس الزجاجية (Beakers)",
+            desc: "حاوية واسعة الفم تُستخدم لتحضير وخلط وتسخين المواد الكيميائية.",
+            img: img3,
+          },
+          {
+            title: "أسطوانة مدرجة",
+            desc: "وعاء طويل وضيّق يُستخدم لقياس أحجام السوائل بدقة أكثر من الكأس.",
+            img: img4,
+          },
+          {
+            title: "دورق حجمي",
+            desc: "وعاء زجاجي ذو قاعدة مستديرة ورقبة ضيقة يُستخدم لقياس حجم محدد من السائل بدقة عالية.",
+            img: img5,
+          },
         ],
+        sec2Title: "الأدوات البلاستيكية",
         features: [
-          { title: 'خبرة متخصصة', desc: 'فريق من الخبراء في المعدات الطبية' },
-          { title: 'حلول مخصصة', desc: 'استشارات مصممة حسب احتياجاتكم' },
-          { title: 'معايير دولية', desc: 'التزام بأعلى المعايير العالمية' },
-          { title: 'دعم مستمر', desc: 'متابعة ودعم على مدار الساعة' }
+          {
+            title: "أنابيب PCR",
+            desc: "أنابيب صغيرة ذات جدران رفيعة مصممة لنقل الحرارة بكفاءة في أجهزة الـ PCR.",
+            img: img6,
+          },
+          {
+            title: "أنبوب إبندورف",
+            desc: "أنبوب بلاستيكي صغير مخروطي الشكل يُعرف أيضاً بأنبوب الطرد المركزي الصغير.",
+            img: img7,
+          },
+          {
+            title: "ألواح PCR",
+            desc: "ألواح 96 أو 384 بئراً تُستخدم للتفاعلات عالية الإنتاجية وخاصة في qPCR.",
+            img: img8,
+          },
+          {
+            title: "شرائط الأنابيب / الأغطية",
+            desc: "شرائط من 8 أو 12 أنبوب مع أغطية مطابقة لتقليل التبخر والتلوث.",
+            img: img9,
+          },
+          {
+            title: "أغطية لاصقة / بصرية",
+            desc: "تُستخدم لإغلاق ألواح PCR وخاصة في PCR اللحظي (Real-Time) للسماح بالكشف البصري.",
+            img: img10,
+          },
+          {
+            title: "رؤوس ماصات بفلتر",
+            desc: "تمنع انتقال الهباء الجوي أثناء تحضير تفاعلات PCR.",
+            img: img11,
+          },
+          {
+            title: "طبق بتري",
+            desc: "وعاء دائري مسطح يُستخدم بشكل أساسي لزراعة الكائنات الحية الدقيقة.",
+            img: img12,
+          },
+          {
+            title: "حلقة تلقيح",
+            desc: "أداة بلاستيكية معقمة تُستخدم لنقل أحجام صغيرة من العينات الميكروبية، تُستخدم لمرة واحدة لتجنب التلوث.",
+            img: img13,
+          },
+          {
+            title: "رؤوس ماصات",
+            desc: "قطع بلاستيكية تستخدم مع الماصات لنقل كميات دقيقة من السوائل.",
+            img: img14,
+          },
+          {
+            title: "دورق زراعة الخلايا",
+            desc: "وعاء بلاستيكي أو زجاجي معقم مُصمم خصيصاً لنمو الخلايا في ظروف معملية مضبوطة.",
+            img: img15,
+          },
+          {
+            title: "ألواح ELISA",
+            desc: "ألواح بلاستيكية متعددة الآبار تُستخدم كأوعية للتفاعلات الكيميائية في اختبار ELISA.",
+            img: img16,
+          },
         ],
+        sec3Title: "",
+        feat3: [],
+        sec4Title: "",
+        feat4: [],
         stats: [
-          { number: '200+', label: 'مشروع استشاري' },
-          { number: '15+', label: 'سنة خبرة' },
-          { number: '98%', label: 'رضا العملاء' },
-          { number: '50+', label: 'عميل راضي' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [],
       },
-      'equipment-maintenance': {
-        title: 'صيانة وتركيب المعدات الطبية',
-        subtitle: 'خدمات صيانة شاملة ومتخصصة',
-        description: 'نوفر خدمات صيانة وتركيب شاملة للمعدات الطبية لضمان الأداء الأمثل والسلامة، مع فريق فني متخصص ومدرب على أحدث التقنيات.',
-        image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
+
+      "Laboratory-Equipment": {
+        title: "الأجهزة المخبرية",
+        image: "",
+        sec1Title: "أجهزة القياس والتحليل",
         services: [
-          'صيانة دورية مجدولة',
-          'إصلاحات طارئة سريعة',
-          'تركيب المعدات الجديدة',
-          'معايرة وضبط الأجهزة',
-          'استبدال القطع والمكونات',
-          'تحديث البرمجيات'
+          {
+            title: "ميزان إلكتروني",
+            desc: "يُستخدم لقياس الكتلة بدقة عالية.",
+            img: image1,
+          },
+          {
+            title: "جهاز قياس pH",
+            desc: "يقيس درجة الحموضة أو القلوية بدقة.",
+            img: image2,
+          },
+          {
+            title: "مطياف ضوئي",
+            desc: "يُحلل تركيز المواد من خلال امتصاص الضوء.",
+            img: image3,
+          },
+          {
+            title: "جهاز طرد مركزي",
+            desc: "يفصل العينات السائلة بناءً على الكثافة بالدوران السريع.",
+            img: image4,
+          },
         ],
+        sec2Title: "أجهزة التسخين والتعقيم",
         features: [
-          { title: 'فريق فني مؤهل', desc: 'مهندسون وفنيون معتمدون' },
-          { title: 'استجابة سريعة', desc: 'خدمة طوارئ على مدار الساعة' },
-          { title: 'قطع غيار أصلية', desc: 'استخدام قطع غيار معتمدة فقط' },
-          { title: 'ضمان الخدمة', desc: 'ضمان شامل على جميع الأعمال' }
+          {
+            title: "حمام مائي",
+            desc: "يحافظ على درجات حرارة ثابتة وآمنة لتسخين العينات.",
+            img: image5,
+          },
+          {
+            title: "صفيحة تسخين مع محرك مغناطيسي",
+            desc: "تُسخن وتُحرك العينات تلقائياً لضمان التجانس.",
+            img: image6,
+          },
+          {
+            title: "أوتوكلاف",
+            desc: "جهاز تعقيم بالبخار عالي الضغط لتعقيم المعدات والمواد.",
+            img: image7,
+          },
+        ],
+        sec3Title: "أجهزة التبريد والتخزين",
+        feat3: [
+          {
+            title: "ثلاجة مخبرية",
+            desc: "تُستخدم لتخزين الكواشف والعينات في درجات حرارة منخفضة.",
+            img: image8,
+          },
+          {
+            title: "مجمد مخبري (-20/-80°C)",
+            desc: "يحافظ على المواد البيولوجية الحساسة لفترات طويلة.",
+            img: image9,
+          },
+          {
+            title: "خزانة السلامة البيولوجية",
+            desc: "تحمي المستخدم والعينات والبيئة أثناء التعامل مع المواد البيولوجية الخطرة.",
+            img: image10,
+          },
+        ],
+        sec4Title: "الأجهزة الحيوية التحليلية المتقدمة",
+        feat4: [
+          {
+            title: "جهاز PCR",
+            desc: "يُستخدم لتضخيم الحمض النووي لأغراض التحليل الجيني والفيروسي.",
+            img: image11,
+          },
+          {
+            title: "محلل الدم",
+            desc: "يجري تعداد دم كامل ويحلل مكوناته.",
+            img: image12,
+          },
+          {
+            title: "محلل الكيمياء الحيوية",
+            desc: "يقيس مؤشرات كيميائية مثل الجلوكوز والإنزيمات والبروتينات في الدم.",
+            img: image13,
+          },
+          {
+            title: "مجهر ضوئي",
+            desc: "يُكبر العينات المجهرية مثل الخلايا والبكتيريا لعرضها.",
+            img: image14,
+          },
+          {
+            title: "ماصة دقيقة",
+            desc: "أداة دقيقة لقياس ونقل أحجام صغيرة جداً من السوائل.",
+            img: image15,
+          },
         ],
         stats: [
-          { number: '1000+', label: 'جهاز تم صيانته' },
-          { number: '24/7', label: 'خدمة طوارئ' },
-          { number: '99%', label: 'معدل الإصلاح' },
-          { number: '2', label: 'ساعة متوسط الاستجابة' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [],
       },
-      'technical-support': {
-        title: 'خدمات الدعم الفني والتدريب للمختبرات',
-        subtitle: 'دعم فني متخصص وتدريب شامل',
-        description: 'نقدم خدمات دعم فني متخصصة وبرامج تدريبية شاملة لفرق المختبرات الطبية لضمان الاستخدام الأمثل للمعدات والتقنيات.',
-        image: 'https://images.pexels.com/photos/5752242/pexels-photo-5752242.jpeg',
-        services: [
-          'دعم فني على مدار الساعة',
-          'برامج تدريبية متخصصة',
-          'ورش عمل تطبيقية',
-          'استشارات تقنية',
-          'تطوير المهارات المهنية',
-          'شهادات معتمدة'
-        ],
-        features: [
-          { title: 'خبراء متخصصون', desc: 'فريق من الخبراء في التقنيات الطبية' },
-          { title: 'برامج مخصصة', desc: 'تدريب مصمم حسب احتياجاتكم' },
-          { title: 'تقنيات حديثة', desc: 'استخدام أحدث طرق التدريب' },
-          { title: 'متابعة مستمرة', desc: 'دعم وتطوير مستمر للمهارات' }
-        ],
+
+      "Microbiology-Dehydrated-Media": {
+        title: "وسائط مجففة لعلم الأحياء الدقيقة",
+        image: image,
+        sec1Title: "وسائط مزروعة مجففة",
+        services: [],
+        sec2Title: "",
+        features: [],
+        sec3Title: "",
+        feat3: [],
+        sec4Title: "",
+        feat4: [],
         stats: [
-          { number: '500+', label: 'متدرب مؤهل' },
-          { number: '50+', label: 'برنامج تدريبي' },
-          { number: '95%', label: 'معدل النجاح' },
-          { number: '24/7', label: 'دعم فني' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [
+          {
+            title: "وسائط للأغراض العامة",
+            children: [
+              { title: "آجار المغذيات", desc: "وسط أساسي للزراعة الروتينية." },
+              {
+                title: "آجار صويا التربتيك (TSA)",
+                desc: "وسط غني معتمد على الصويا لنمو البكتيريا.",
+              },
+              {
+                title: "تسريب دماغ قلب (BHI)",
+                desc: "يدعم نمو الكائنات الدقيقة صعبة التغذية.",
+              },
+            ],
+          },
+          {
+            title: "وسائط مُثرية",
+            children: [
+              { title: "آجار الدم الأساسي", desc: "يتطلب إضافة دم معقم." },
+              {
+                title: "آجار الشوكولاتة الأساسي",
+                desc: "يُستخدم لنمو النيسرية والهيموفيلس بعد إضافة دم محلل.",
+              },
+            ],
+          },
+          {
+            title: "وسائط انتقائية",
+            children: [
+              {
+                title: "آجار ماكونكي",
+                desc: "انتقائي للبكتيريا سالبة الجرام ويفرق بين المخمرة لسكريات اللاكتوز.",
+              },
+              {
+                title: "آجار مانيتول الملحي (MSA)",
+                desc: "انتقائي للمكورات العنقودية.",
+              },
+              {
+                title: "آجار XLD",
+                desc: "يُستخدم لعزل السالمونيلا والشيغيلا.",
+              },
+            ],
+          },
+          {
+            title: "وسائط تفريقية",
+            children: [
+              {
+                title: "آجار EMB (إيوزين ميثيلين أزرق)",
+                desc: "يفرق بين البكتيريا المخمرة للاكتوز.",
+              },
+              {
+                title: "آجار CLED",
+                desc: "يُستخدم لعدوى المسالك البولية ويمنع انتشار بروتيوس.",
+              },
+            ],
+          },
+          {
+            title: "وسائط للإثراء",
+            children: [
+              { title: "مرق سيلينيت إف", desc: "وسط إغناء للسالمونيلا." },
+              {
+                title: "مرق التيتراثيونات",
+                desc: "يُستخدم أيضاً للعوامل الممرضة المعوية.",
+              },
+            ],
+          },
+          {
+            title: "وسائط النقل (أساس مجفف)",
+            children: [
+              { title: "وسط Amies", desc: "" },
+              { title: "وسط Stuart", desc: "" },
+            ],
+          },
+          {
+            title: "وسائط لا هوائية",
+            children: [
+              { title: "وسط الثيوغليكولات", desc: "" },
+              { title: "وسط اللحم المطبوخ", desc: "" },
+            ],
+          },
+          {
+            title: "وسائط متخصصة",
+            children: [
+              {
+                title: "آجار سابورود ديكستروز (SDA)",
+                desc: "يُستخدم لزراعة الفطريات.",
+              },
+              {
+                title: "وسط لوفنشتاين-جنسن",
+                desc: "يُستخدم لعزل المتفطرة السلية.",
+              },
+            ],
+          },
+        ],
       },
-      'laboratory-supplies': {
-        title: 'مستلزمات مختبرات طبية استهلاكية',
-        subtitle: 'مستلزمات عالية الجودة للمختبرات',
-        description: 'نوفر جميع المستلزمات الاستهلاكية عالية الجودة للمختبرات الطبية من مصادر موثوقة ومعتمدة عالمياً.',
-        image: 'https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg',
-        services: [
-          'مواد استهلاكية متنوعة',
-          'أدوات تشخيص دقيقة',
-          'مواد كيميائية معتمدة',
-          'أدوات حماية شخصية',
-          'مستلزمات عينات',
-          'مواد معايرة وضبط'
-        ],
-        features: [
-          { title: 'جودة عالمية', desc: 'منتجات من أفضل الشركات العالمية' },
-          { title: 'توفر مستمر', desc: 'مخزون دائم لجميع المستلزمات' },
-          { title: 'أسعار تنافسية', desc: 'أفضل الأسعار في السوق' },
-          { title: 'توصيل سريع', desc: 'خدمة توصيل سريعة وموثوقة' }
-        ],
-        stats: [
-          { number: '1000+', label: 'منتج متوفر' },
-          { number: '100+', label: 'مختبر يثق بنا' },
-          { number: '99%', label: 'رضا العملاء' },
-          { number: '24', label: 'ساعة توصيل' }
-        ]
-      },
-      'advanced-equipment': {
-        title: 'أجهزة ومعدات مختبرات طبية متطورة',
-        subtitle: 'أحدث التقنيات الطبية المتطورة',
-        description: 'نقدم أحدث الأجهزة والمعدات الطبية المتطورة للمختبرات والمراكز الطبية من أفضل الشركات المصنعة عالمياً.',
-        image: 'https://images.pexels.com/photos/263337/pexels-photo-263337.jpeg',
-        services: [
-          'أجهزة تحليل متطورة',
-          'معدات تشخيص دقيقة',
-          'أنظمة مراقبة ذكية',
-          'تقنيات تصوير طبي',
-          'أجهزة قياس متخصصة',
-          'حلول أتمتة المختبرات'
-        ],
-        features: [
-          { title: 'تقنيات متقدمة', desc: 'أحدث التقنيات في المجال الطبي' },
-          { title: 'دقة عالية', desc: 'نتائج دقيقة وموثوقة' },
-          { title: 'سهولة الاستخدام', desc: 'واجهات بسيطة وسهلة التشغيل' },
-          { title: 'ضمان شامل', desc: 'ضمان وخدمة ما بعد البيع' }
-        ],
-        stats: [
-          { number: '200+', label: 'جهاز متطور' },
-          { number: '50+', label: 'مركز طبي' },
-          { number: '98%', label: 'دقة النتائج' },
-          { number: '5', label: 'سنوات ضمان' }
-        ]
-      },
-      'veterinary-solutions': {
-        title: 'حلول وتقنيات بيطرية متخصصة',
-        subtitle: 'رعاية طبية متخصصة للحيوانات',
-        description: 'نوفر حلول طبية متخصصة للطب البيطري مع أحدث التقنيات والمعدات لضمان أفضل رعاية صحية للحيوانات.',
-        image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
-        services: [
-          'معدات بيطرية متخصصة',
-          'أدوية وعلاجات بيطرية',
-          'أدوات جراحية دقيقة',
-          'أنظمة تشخيص متطورة',
-          'مستلزمات رعاية الحيوانات',
-          'تقنيات تصوير بيطري'
-        ],
-        features: [
-          { title: 'تخصص بيطري', desc: 'حلول مصممة خصيصاً للطب البيطري' },
-          { title: 'جودة عالية', desc: 'منتجات معتمدة ومضمونة الجودة' },
-          { title: 'دعم متخصص', desc: 'فريق دعم متخصص في الطب البيطري' },
-          { title: 'تدريب شامل', desc: 'برامج تدريبية للأطباء البيطريين' }
-        ],
-        stats: [
-          { number: '300+', label: 'منتج بيطري' },
-          { number: '80+', label: 'عيادة بيطرية' },
-          { number: '97%', label: 'رضا الأطباء' },
-          { number: '10+', label: 'سنوات خبرة' }
-        ]
-      }
     },
+
     en: {
-      'medical-consulting': {
-        title: 'Specialized consulting services in the field of medical equipment',
-        subtitle: 'Specialized medical consultations and innovative solutions',
-        description: 'We provide specialized consulting services in the field of medical equipment, helping healthcare institutions select and implement the best technical solutions suitable for their specific needs.',
-        image: 'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg',
+      "Laboratory-Consumables": {
+        title: "Laboratory Consumables",
+        image: "",
+        sec1Title: "Basic Glassware",
         services: [
-          'Comprehensive medical needs assessment',
-          'Appropriate equipment selection',
-          'Economic feasibility studies',
-          'Strategic development planning',
-          'Medical project management',
-          'Quality assurance and standards'
+          {
+            title: "Test Tubes",
+            desc: "Test Tube Used to hold, heat, or mix small quantities of liquids.",
+            img: img1,
+          },
+          {
+            title: "Erlenmeyer Flask",
+            desc: "A conical flask used for mixing, heating, and storing solutions. Its narrow neck helps prevent spillage.",
+            img: img2,
+          },
+          {
+            title: "Beakers",
+            desc: "A wide-mouthed glass container used for preparing, mixing, and heating chemicals.",
+            img: img3,
+          },
+          {
+            title: "Graduated Cylinder",
+            desc: "A tall, narrow container used to measure liquid volumes more accurately than a beaker.",
+            img: img4,
+          },
+          {
+            title: "Volumetric flask",
+            desc: "A volumetric flask is a glass container with a round bottom and a long, narrow neck, used in chemical laboratories to measure a specific volume of liquid with high accuracy. ",
+            img: img5,
+          },
         ],
+        sec2Title: "Plastic ware",
         features: [
-          { title: 'Specialized Expertise', desc: 'Team of experts in medical equipment' },
-          { title: 'Customized Solutions', desc: 'Consultations designed according to your needs' },
-          { title: 'International Standards', desc: 'Commitment to the highest global standards' },
-          { title: 'Continuous Support', desc: 'Follow-up and support around the clock' }
+          {
+            title: "PCR Tubes",
+            desc: "Small, thin-walled tubes (typically 0.2 mL or 0.5 mL) designed for optimal heat transfer in thermal cyclers.",
+            img: img6,
+          },
+          {
+            title: "Eppendorf Tube",
+            desc: "An Eppendorf tube—also known as a microcentrifuge tube—is a small, plastic, conical tube",
+            img: img7,
+          },
+          {
+            title: "PCR Plates",
+            desc: "96-well or 384-well plates used for high-throughput PCR reactions, especially in qPCR (real-time PCR).",
+            img: img8,
+          },
+          {
+            title: "Tube Strips / Cap Strips",
+            desc: "8-tube or 12-tube strips often used with matching caps to prevent evaporation and contamination.",
+            img: img9,
+          },
+          {
+            title: "Adhesive Seals / Optical Caps",
+            desc: "Used to seal PCR plates, especially in real-time PCR, to allow for optical detection.",
+            img: img10,
+          },
+          {
+            title: "Filtered Pipette Tips",
+            desc: "Filter Pipette Tips are used to prevent aerosol contamination during PCR reaction setup.",
+            img: img11,
+          },
+          {
+            title: "Petri dish",
+            desc: "A Petri dish is a flat, round container used primarily to culture microorganisms such as bacteria, fungi, or cells.",
+            img: img12,
+          },
+          {
+            title: "Inoculation loop",
+            desc: "A disposable inoculation loop is a pre-sterilized plastic instrument, typically made of polystyrene or polypropylene, with a loop at the end designed to hold a small, precise volume of liquid or microbial culture (e.g., 1 µL or 10 µL). It is thrown away after one use to prevent cross-contamination.",
+            img: img13,
+          },
+          {
+            title: "Pipette tips",
+            desc: "Disposable attachments used with pipettes to aspirate and dispense precise volumes of liquid in laboratory .",
+            img: img14,
+          },
+          {
+            title: "Cell culture flask",
+            desc: "A cell culture flask is a sterile, plastic or glass container specifically designed for growing and maintaining cells under controlled laboratory conditions.",
+            img: img15,
+          },
+          {
+            title: "ELISA plates",
+            desc: "Microplates or microtiter plates are flat, rectangular plastic plates with multiple small wells used as reaction vessels in ELISA (Enzyme-Linked Immunosorbent Assay)",
+            img: img16,
+          },
         ],
+
+        sec3Title: "",
+        feat3: [],
+        sec4Title: "",
+        feat4: [],
+
         stats: [
-          { number: '200+', label: 'Consulting Projects' },
-          { number: '15+', label: 'Years Experience' },
-          { number: '98%', label: 'Client Satisfaction' },
-          { number: '50+', label: 'Satisfied Clients' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [],
       },
-      'equipment-maintenance': {
-        title: 'Maintenance and installation of medical equipment',
-        subtitle: 'Comprehensive and specialized maintenance services',
-        description: 'We provide comprehensive maintenance and installation services for medical equipment to ensure optimal performance and safety, with a specialized technical team trained on the latest technologies.',
-        image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
+      "Laboratory-Equipment": {
+        title: "Laboratory Equipment",
+        image: "",
+        sec1Title: "Measurement and Analysis Instruments",
         services: [
-          'Scheduled periodic maintenance',
-          'Quick emergency repairs',
-          'New equipment installation',
-          'Device calibration and adjustment',
-          'Parts and components replacement',
-          'Software updates'
+          {
+            title: "Electronic Balance",
+            desc: "Used for high-precision measurement of mass.",
+            img: image1,
+          },
+          {
+            title: "pH Meter",
+            desc: "Measures the acidity or alkalinity of solutions accurately.",
+            img: image2,
+          },
+          {
+            title: "Spectrophotometer",
+            desc: "Analyzes the concentration of substances by measuring light absorption.",
+            img: image3,
+          },
+          {
+            title: "Centrifuge",
+            desc: "Separates liquid samples based on density using rapid spinning.",
+            img: image4,
+          },
         ],
+        sec2Title: "Heating and Sterilization Equipment",
         features: [
-          { title: 'Qualified Technical Team', desc: 'Certified engineers and technicians' },
-          { title: 'Quick Response', desc: '24/7 emergency service' },
-          { title: 'Original Spare Parts', desc: 'Using only certified spare parts' },
-          { title: 'Service Warranty', desc: 'Comprehensive warranty on all work' }
+          {
+            title: "Water Bath",
+            desc: "Maintains constant, safe temperatures for heating samples.",
+            img: image5,
+          },
+          {
+            title: "Hot Plate with Magnetic Stirrer",
+            desc: "Heats and stirs samples automatically to ensure uniformity.",
+            img: image6,
+          },
+          {
+            title: "Autoclave",
+            desc: "A high-pressure steam sterilizer used to disinfect lab equipment and materials.",
+            img: image7,
+          },
+        ],
+        sec3Title: "Refrigeration and Storage Equipment",
+        feat3: [
+          {
+            title: "Laboratory Refrigerator",
+            desc: "Stores reagents and samples at low temperatures.",
+            img: image8,
+          },
+          {
+            title: "Laboratory Freezer (-20/-80°C)",
+            desc: "Preserves sensitive biological materials for extended periods.",
+            img: image9,
+          },
+          {
+            title: "Biological Safety Cabinet",
+            desc: "Protects users, samples, and the environment while handling hazardous biological materials.",
+            img: image10,
+          },
+        ],
+        sec4Title: "Advanced Bioanalytical Equipment",
+        feat4: [
+          {
+            title: "PCR Machine",
+            desc: "Amplifies DNA for genetic and viral analysis.",
+            img: image11,
+          },
+          {
+            title: "Hematology Analyzer",
+            desc: "Performs complete blood counts and analyzes blood components.",
+            img: image12,
+          },
+          {
+            title: "Biochemistry Analyzer",
+            desc: "Measures chemical markers like glucose, enzymes, and proteins in blood.",
+            img: image13,
+          },
+          {
+            title: "Light Microscope",
+            desc: "Magnifies and allows visualization of microscopic samples such as cells and bacteria.",
+            img: image14,
+          },
+          {
+            title: "Pipette",
+            desc: "A precise instrument used to measure and transfer very small volumes of liquids.",
+            img: image15,
+          },
         ],
         stats: [
-          { number: '1000+', label: 'Devices Maintained' },
-          { number: '24/7', label: 'Emergency Service' },
-          { number: '99%', label: 'Repair Rate' },
-          { number: '2', label: 'Hours Average Response' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [],
       },
-      'technical-support': {
-        title: 'Technical support and training services for laboratories',
-        subtitle: 'Specialized technical support and comprehensive training',
-        description: 'We provide specialized technical support services and comprehensive training programs for medical laboratory teams to ensure optimal use of equipment and technologies.',
-        image: 'https://images.pexels.com/photos/5752242/pexels-photo-5752242.jpeg',
-        services: [
-          '24/7 technical support',
-          'Specialized training programs',
-          'Practical workshops',
-          'Technical consultations',
-          'Professional skill development',
-          'Certified certificates'
-        ],
-        features: [
-          { title: 'Specialized Experts', desc: 'Team of experts in medical technologies' },
-          { title: 'Customized Programs', desc: 'Training designed according to your needs' },
-          { title: 'Modern Techniques', desc: 'Using the latest training methods' },
-          { title: 'Continuous Follow-up', desc: 'Continuous support and skill development' }
-        ],
+      "Microbiology-Dehydrated-Media": {
+        title: "Microbiology Dehydrated Media ",
+        image: image,
+        sec1Title: "Dehydrated Culture Media",
+        services: [],
+        sec2Title: "",
+        features: [],
+        sec3Title: "",
+        feat3: [],
+        sec4Title: "",
+        feat4: [],
         stats: [
-          { number: '500+', label: 'Qualified Trainees' },
-          { number: '50+', label: 'Training Programs' },
-          { number: '95%', label: 'Success Rate' },
-          { number: '24/7', label: 'Technical Support' }
-        ]
+          { number: "200+", label: "مشروع استشاري" },
+          { number: "15+", label: "سنة خبرة" },
+          { number: "98%", label: "رضا العملاء" },
+          { number: "50+", label: "عميل راضي" },
+        ],
+        multiple: [
+          {
+            title: "General Purpose Media",
+            children: [
+              {
+                title: "Nutrient Agar",
+                desc: "Basic media for routine cultivation.",
+              },
+              {
+                title: "Tryptic Soy Agar (TSA)",
+                desc: "Rich, soy-based media for bacterial growth.",
+              },
+              {
+                title: "Brain Heart Infusion (BHI)",
+                desc: "Supports fastidious organisms.",
+              },
+            ],
+          },
+          {
+            title: "Enriched Media",
+            children: [
+              {
+                title: "Blood Agar Base",
+                desc: "Requires supplementation with sterile blood.",
+              },
+              {
+                title: "Chocolate Agar Base",
+                desc: "Used for growing Neisseria and Haemophilus after adding lysed blood.",
+              },
+            ],
+          },
+          {
+            title: "Selective Media",
+            children: [
+              {
+                title: "MacConkey Agar",
+                desc: "Selective for Gram-negative, differentiates lactose fermenters.",
+              },
+              {
+                title: "Mannitol Salt Agar (MSA)",
+                desc: "Selective for Staphylococci.",
+              },
+              {
+                title: "XLD Agar",
+                desc: " For isolating Salmonella and Shigella.",
+              },
+            ],
+          },
+          {
+            title: "Differential Media",
+            children: [
+              {
+                title: "EMB Agar (Eosin Methylene Blue)",
+                desc: "Differentiates lactose fermenters.",
+              },
+              {
+                title: "CLED Agar",
+                desc: "For urinary pathogens, prevents swarming of Proteus.",
+              },
+            ],
+          },
+          {
+            title: "Enrichment Media",
+            children: [
+              {
+                title: "Selenite F Broth",
+                desc: "Enrichment for Salmonella.",
+              },
+              {
+                title: "Tetrathionate Broth",
+                desc: "Also used for enteric pathogens.",
+              },
+            ],
+          },
+          {
+            title: "Transport Media (Dehydrated Base)",
+            children: [
+              {
+                title: "Amies Medium Base",
+                desc: "",
+              },
+              {
+                title: "Stuart’s Medium Base",
+                desc: "",
+              },
+            ],
+          },
+          {
+            title: "Anaerobic Media",
+            children: [
+              {
+                title: "Thioglycollate Medium",
+                desc: "",
+              },
+              {
+                title: "Cooked Meat Medium",
+                desc: "",
+              },
+            ],
+          },
+          {
+            title: "Specialized Media",
+            children: [
+              {
+                title: "Sabouraud Dextrose Agar (SDA)",
+                desc: "For fungal culture.",
+              },
+              {
+                title: "Lowenstein-Jensen Medium Base",
+                desc: "For Mycobacterium tuberculosis.",
+              },
+            ],
+          },
+        ],
       },
-      'laboratory-supplies': {
-        title: 'Medical laboratory consumable supplies',
-        subtitle: 'High-quality supplies for laboratories',
-        description: 'We provide all high-quality consumable supplies for medical laboratories from reliable and internationally certified sources.',
-        image: 'https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg',
-        services: [
-          'Various consumable materials',
-          'Accurate diagnostic tools',
-          'Certified chemical materials',
-          'Personal protective equipment',
-          'Sample supplies',
-          'Calibration and adjustment materials'
-        ],
-        features: [
-          { title: 'Global Quality', desc: 'Products from the best global companies' },
-          { title: 'Continuous Availability', desc: 'Permanent stock of all supplies' },
-          { title: 'Competitive Prices', desc: 'Best prices in the market' },
-          { title: 'Fast Delivery', desc: 'Fast and reliable delivery service' }
-        ],
-        stats: [
-          { number: '1000+', label: 'Available Products' },
-          { number: '100+', label: 'Trusting Laboratories' },
-          { number: '99%', label: 'Customer Satisfaction' },
-          { number: '24', label: 'Hours Delivery' }
-        ]
-      },
-      'advanced-equipment': {
-        title: 'Advanced medical laboratory equipment and devices',
-        subtitle: 'Latest advanced medical technologies',
-        description: 'We provide the latest advanced medical equipment and devices for laboratories and medical centers from the best global manufacturers.',
-        image: 'https://images.pexels.com/photos/263337/pexels-photo-263337.jpeg',
-        services: [
-          'Advanced analysis devices',
-          'Accurate diagnostic equipment',
-          'Smart monitoring systems',
-          'Medical imaging technologies',
-          'Specialized measuring devices',
-          'Laboratory automation solutions'
-        ],
-        features: [
-          { title: 'Advanced Technologies', desc: 'Latest technologies in the medical field' },
-          { title: 'High Accuracy', desc: 'Accurate and reliable results' },
-          { title: 'Ease of Use', desc: 'Simple and easy-to-operate interfaces' },
-          { title: 'Comprehensive Warranty', desc: 'Warranty and after-sales service' }
-        ],
-        stats: [
-          { number: '200+', label: 'Advanced Devices' },
-          { number: '50+', label: 'Medical Centers' },
-          { number: '98%', label: 'Result Accuracy' },
-          { number: '5', label: 'Years Warranty' }
-        ]
-      },
-      'veterinary-solutions': {
-        title: 'Specialized veterinary solutions and techniques',
-        subtitle: 'Specialized medical care for animals',
-        description: 'We provide specialized medical solutions for veterinary medicine with the latest technologies and equipment to ensure the best healthcare for animals.',
-        image: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg',
-        services: [
-          'Specialized veterinary equipment',
-          'Veterinary medicines and treatments',
-          'Precise surgical instruments',
-          'Advanced diagnostic systems',
-          'Animal care supplies',
-          'Veterinary imaging technologies'
-        ],
-        features: [
-          { title: 'Veterinary Specialization', desc: 'Solutions designed specifically for veterinary medicine' },
-          { title: 'High Quality', desc: 'Certified and quality-guaranteed products' },
-          { title: 'Specialized Support', desc: 'Support team specialized in veterinary medicine' },
-          { title: 'Comprehensive Training', desc: 'Training programs for veterinarians' }
-        ],
-        stats: [
-          { number: '300+', label: 'Veterinary Products' },
-          { number: '80+', label: 'Veterinary Clinics' },
-          { number: '97%', label: 'Doctor Satisfaction' },
-          { number: '10+', label: 'Years Experience' }
-        ]
-      }
-    }
+    },
   };
 
   const t = categoryData[language as keyof typeof categoryData];
@@ -336,25 +713,25 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({ language }) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            {language === 'ar' ? 'القسم غير موجود' : 'Category Not Found'}
+            {language === "ar" ? "القسم غير موجود" : "Category Not Found"}
           </h1>
           <Link
             to="/"
             className="text-hcare-primary hover:text-hcare-secondary font-semibold"
           >
-            {language === 'ar' ? 'العودة للرئيسية' : 'Back to Home'}
+            {language === "ar" ? "العودة للرئيسية" : "Back to Home"}
           </Link>
         </div>
       </div>
     );
   }
 
-  const backText = language === 'ar' ? 'العودة للخدمات' : 'Back to Services';
-  const contactText = language === 'ar' ? 'تواصل معنا' : 'Contact Us';
-  const callText = language === 'ar' ? 'اتصل بنا' : 'Call Us';
-  const servicesTitle = language === 'ar' ? 'خدماتنا' : 'Our Services';
-  const featuresTitle = language === 'ar' ? 'مميزاتنا' : 'Our Features';
-  const statsTitle = language === 'ar' ? 'إحصائياتنا' : 'Our Statistics';
+  const backText = language === "ar" ? "العودة للخدمات" : "Back to Services";
+  const contactText = language === "ar" ? "تواصل معنا" : "Contact Us";
+  const callText = language === "ar" ? "اتصل بنا" : "Call Us";
+  // const servicesTitle = language === "ar" ? "خدماتنا" : "Our Services";
+  // const featuresTitle = language === "ar" ? "مميزاتنا" : "Our Features";
+  const statsTitle = language === "ar" ? "إحصائياتنا" : "Our Statistics";
 
   return (
     <div className="min-h-screen pt-20">
@@ -367,40 +744,47 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({ language }) => {
                 onClick={() => window.history.back()}
                 className="inline-flex items-center gap-2 text-hcare-light hover:text-white transition-colors duration-200"
               >
-                {language === 'ar' ? (
+                {language === "ar" ? (
                   <ArrowRight size={20} />
                 ) : (
                   <ArrowLeft size={20} />
                 )}
                 {backText}
               </button>
-              
+
               <div>
-                <h1 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight">{category.title}</h1>
-                <p className="text-xl text-hcare-light mb-6">{category.subtitle}</p>
-                <p className="text-lg leading-relaxed">{category.description}</p>
+                <h1 className="text-3xl lg:text-5xl font-bold mb-4 leading-tight">
+                  {category.title}
+                </h1>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-hcare-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2">
+                <Link
+                  to={`/hekma#${"contact"}`}
+                  className="bg-white text-hcare-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center gap-2"
+                >
                   <Calendar size={20} />
                   {contactText}
-                </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-hcare-primary transition-colors duration-200 flex items-center justify-center gap-2">
+                </Link>
+                <a
+                  href="tel:+966570062075"
+                  className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-hcare-primary transition-colors duration-200 flex items-center justify-center gap-2"
+                >
                   <Phone size={20} />
                   {callText}
-                </button>
+                </a>
               </div>
             </div>
-
-            <div className="relative">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-            </div>
+            {category.image && category.image !== "" && (
+              <div className="relative">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="rounded-2xl shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -408,44 +792,213 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({ language }) => {
       {/* Services Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{servicesTitle}</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            {category.sec1Title && category.sec1Title}
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.services.map((service, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle size={20} className="text-hcare-primary" />
-                  <h3 className="font-semibold text-gray-900">{service}</h3>
+            {category.multiple &&
+              category.multiple.length > 0 &&
+              category.multiple.map((elem, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200"
+                >
+                  <h3 className="text-xl font-bold text-gray-900 mb-12 text-center">
+                    {elem.title && elem.title}
+                  </h3>
+
+                  {elem.children && elem.children.length > 0 && (
+                    <div className="space-y-4">
+                      {elem.children.map((child, cIndex) => (
+                        <div key={cIndex} className="flex items-start gap-4">
+                          {/* <CheckCircle size={20} className="text-hcare-primary mt-1" /> */}
+                          <div>
+                            <h4 className="font-semibold text-gray-900">
+                              {child.title}
+                            </h4>
+                            <p className="text-gray-600">{child.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {category.services &&
+              category.services.length > 0 &&
+              category.services.map((service, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={service.img}
+                      alt={service.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    {/* <div className="text-sm font-medium text-hcare-primary mb-2">
+                    {service.title}
+                  </div> */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section
+        className={
+          category.features && category.features.length > 0
+            ? "py-20 bg-gray-50"
+            : "hidden"
+        }
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{featuresTitle}</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {category.features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-200">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-hcare-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Star size={24} className="text-white" />
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            {category.sec2Title && category.sec2Title}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {category.features &&
+              category.features.length > 0 &&
+              category.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={feature.img}
+                      alt={feature.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+
+                  <div className="p-6">
+                    {/* <div className="text-sm font-medium text-hcare-primary mb-2">
+                    {feature.title}
+                  </div> */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {feature.title}
+                    </h4>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {feature.desc}
+                    </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section
+        className={
+          category.feat3 && category.feat3.length > 0
+            ? "py-20 bg-white"
+            : "hidden"
+        }
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            {category.sec3Title && category.sec3Title}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {category.feat3 &&
+              category.feat3.length > 0 &&
+              category.feat3.map((service, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={service.img}
+                      alt={service.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    {/* <div className="text-sm font-medium text-hcare-primary mb-2">
+                    {service.title}
+                  </div> */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section
+        className={
+          category.feat4 && category.feat4.length > 0
+            ? "py-20 bg-gray-50"
+            : "hidden"
+        }
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            {category.sec4Title && category.sec4Title}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {category.feat4 &&
+              category.feat4.length > 0 &&
+              category.feat4.map((feature, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={feature.img}
+                      alt={feature.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    {/* <div className="text-sm font-medium text-hcare-primary mb-2">
+                    {feature.title}
+                  </div> */}
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {feature.title}
+                    </h4>
+                    <p className="text-gray-600 mb-4 leading-relaxed">
+                      {feature.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-hcare-primary text-white">
+      <section className="py-20 bg-hcare-primary text-white hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-12 text-center">{statsTitle}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -465,23 +1018,28 @@ const CategoryDetail: React.FC<CategoryDetailProps> = ({ language }) => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            {language === 'ar' ? 'هل تحتاج لاستشارة متخصصة؟' : 'Need a Specialized Consultation?'}
+            {language === "ar"
+              ? "هل تحتاج لاستشارة متخصصة؟"
+              : "Need a Specialized Consultation?"}
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            {language === 'ar' 
-              ? 'فريقنا المتخصص جاهز لتقديم أفضل الحلول والخدمات لك'
-              : 'Our specialized team is ready to provide you with the best solutions and services'
-            }
+            {language === "ar"
+              ? "فريقنا المتخصص جاهز لتقديم أفضل الحلول والخدمات لك"
+              : "Our specialized team is ready to provide you with the best solutions and services"}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-hcare-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-hcare-secondary transition-colors duration-200 flex items-center justify-center gap-2">
               <Calendar size={20} />
               {contactText}
             </button>
-            <button className="border-2 border-hcare-primary text-hcare-primary px-8 py-4 rounded-full font-semibold hover:bg-hcare-primary hover:text-white transition-colors duration-200 flex items-center justify-center gap-2">
+            <a
+              href="tel:+966570062075"
+              dir="ltr"
+              className="border-2 border-hcare-primary text-hcare-primary px-8 py-4 rounded-full font-semibold hover:bg-hcare-primary hover:text-white transition-colors duration-200 flex items-center justify-center gap-2"
+            >
               <Phone size={20} />
-              +966 11 123 4567
-            </button>
+              +966 57 006 2075
+            </a>
           </div>
         </div>
       </section>
